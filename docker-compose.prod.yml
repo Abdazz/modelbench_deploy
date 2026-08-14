@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes: [modelbench-data:/var/lib/postgresql/data]
+
+  backend:
+    image: ghcr.io/abdazz/modelbench_backend:latest
+    environment:
+      DB_HOST: postgres
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      APP_CORS_ORIGINES: https://${APP_DOMAIN}
+    ports: ["127.0.0.1:8090:8090"]
+    depends_on: [postgres]
+
+  frontend:
+    image: ghcr.io/abdazz/modelbench_frontend:latest
+    ports: ["127.0.0.1:8080:80"]
+
+volumes:
+  modelbench-data:
