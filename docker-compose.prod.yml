@@ -21,7 +21,7 @@ services:
 
   frontend:
     image: ghcr.io/abdazz/modelbench_frontend:latest
-    ports: ["127.0.0.1:8080:80"]
+    ports: ["127.0.0.1:8081:80"]
 
 volumes:
   modelbench-data:
