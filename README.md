@@ -91,9 +91,9 @@ Certbot reecrit les deux vhosts pour servir en HTTPS et ajoute la redirection HT
 
 ```bash
 cd /opt/modelbench
-docker compose pull
-docker compose up -d
-docker compose ps
+docker compose -f docker-compose.prod.yml pull
+docker compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml ps
 ```
 
 Verifier que la colonne `PORTS` du service `postgres` ne montre aucun mapping vers l'hote.
