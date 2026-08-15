@@ -109,5 +109,5 @@ configurer `docker login ghcr.io` sur le VPS.
 
 - `https://modelbench.golden-technologies.com` affiche la page de connexion.
 - `https://mbapi.golden-technologies.com/swagger` affiche Swagger UI.
-- Connexion avec `admin` / `admin123`, creation d'un dataset, verifie que le CRUD fonctionne de bout
-  en bout a travers Apache et les deux conteneurs.
+- Connexion avec `admin@example.com` / `admin123`, creation d'un dataset, verifie que le CRUD
+  fonctionne de bout en bout a travers Apache et les deux conteneurs.
